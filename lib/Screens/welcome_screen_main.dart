@@ -24,6 +24,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       body: Stack(
         children: [
           Container(
+              color: Colors.white,
               alignment: const Alignment(0, -0.88),
               child: const Image(
                 image: AssetImage('images/hostel.jpeg'),
