@@ -47,175 +47,177 @@ class _HostelDetailState extends State<HostelDetail> {
         elevation: 0,
         backgroundColor: Colors.transparent,
       ),
+      resizeToAvoidBottomInset: true,
       body: Stack(
         children: [
           PageView(
             controller: _controller,
             children: const [HostelDetail1(), HostelDetail2()],
           ),
-          Column(
-            children: [
-              const SizedBox(
-                height: 300,
-              ),
-              SmoothPageIndicator(
-                controller: _controller,
-                count: 2,
-                effect: ExpandingDotsEffect(
-                    dotColor: Colors.white.withOpacity(0.4),
-                    activeDotColor: Colors.white,
-                    dotHeight: 4),
-              ),
-              const SizedBox(height: 16),
-              Expanded(
-                child: Container(
-                  decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(16),
-                          topRight: Radius.circular(16))),
-                  height: 2 * MediaQuery.of(context).size.height / 3,
-                  width: double.infinity,
-                  child: Expanded(
-                    child: ListView(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+          Positioned(
+            top: 0,
+            bottom: 0,
+            right: 0,
+            left: 0,
+            child: Column(
+              children: [
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 3,
+                ),
+                SmoothPageIndicator(
+                  controller: _controller,
+                  count: 2,
+                  effect: ExpandingDotsEffect(
+                      dotColor: Colors.white.withOpacity(0.4),
+                      activeDotColor: Colors.white,
+                      dotHeight: 4),
+                ),
+                const SizedBox(height: 16),
+                Expanded(
+                  child: Container(
+                    decoration: const BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(16),
+                            topRight: Radius.circular(16))),
+                    width: double.infinity,
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Row(
                             children: [
                               Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
-                                      Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          const Text(
-                                            'Pinky Hostel',
-                                            style: TextStyle(
-                                                fontSize: 24,
-                                                fontWeight: FontWeight.w500),
-                                          ),
-                                          const SizedBox(
-                                            height: 4,
-                                          ),
-                                          Row(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            children: const [
-                                              Icon(
-                                                Icons.location_on,
-                                                size: 14,
-                                                color: Color(0xffBAB9BB),
-                                              ),
-                                              SizedBox(
-                                                width: 4,
-                                              ),
-                                              Text(
-                                                'East Legon, Accra',
-                                                style: TextStyle(
-                                                    color: Colors.black54),
-                                              )
-                                            ],
-                                          )
-                                        ],
+                                      const Text(
+                                        'Pinky Hostel',
+                                        style: TextStyle(
+                                            fontSize: 24,
+                                            fontWeight: FontWeight.w500),
                                       ),
                                       const SizedBox(
-                                        width: 120,
+                                        height: 4,
                                       ),
                                       Row(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
                                         children: const [
                                           Icon(
-                                            Icons.star,
-                                            color: Colors.amber,
-                                            size: 16,
+                                            Icons.location_on,
+                                            size: 14,
+                                            color: Color(0xffBAB9BB),
                                           ),
-                                          Icon(
-                                            Icons.star,
-                                            color: Colors.amber,
-                                            size: 16,
+                                          SizedBox(
+                                            width: 4,
                                           ),
-                                          Icon(
-                                            Icons.star,
-                                            color: Colors.amber,
-                                            size: 16,
-                                          ),
-                                          Icon(
-                                            Icons.star,
-                                            color: Colors.amber,
-                                            size: 16,
-                                          ),
-                                          Icon(
-                                            Icons.star,
-                                            color: Colors.amber,
-                                            size: 16,
-                                          ),
+                                          Text(
+                                            'East Legon, Accra',
+                                            style: TextStyle(
+                                                color: Colors.black54),
+                                          )
                                         ],
+                                      )
+                                    ],
+                                  ),
+                                  const SizedBox(
+                                    width: 120,
+                                  ),
+                                  Row(
+                                    children: const [
+                                      Icon(
+                                        Icons.star,
+                                        color: Colors.amber,
+                                        size: 16,
+                                      ),
+                                      Icon(
+                                        Icons.star,
+                                        color: Colors.amber,
+                                        size: 16,
+                                      ),
+                                      Icon(
+                                        Icons.star,
+                                        color: Colors.amber,
+                                        size: 16,
+                                      ),
+                                      Icon(
+                                        Icons.star,
+                                        color: Colors.amber,
+                                        size: 16,
+                                      ),
+                                      Icon(
+                                        Icons.star,
+                                        color: Colors.amber,
+                                        size: 16,
                                       ),
                                     ],
                                   ),
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 16,
-                              ),
-                              const Text(
-                                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet, sit quam proin auctor tellus, viverra. Ipsum mi tristique urna, tincidunt. Morbi mauris augue bibendum pharetra massa odio tincidunt aliquam. Morbi ut at massa lobortis vestibulum, non diam pretium.',
-                                style: TextStyle(
-                                    color: Colors.black54, height: 1.4),
-                              ),
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              const Divider(
-                                color: Colors.black54,
-                                thickness: 0.2,
-                              ),
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  const Text(
-                                    'Available Rooms & Rates',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 16),
-                                  ),
-                                  const SizedBox(
-                                    height: 16,
-                                  ),
-                                  ListView(
-                                    physics:
-                                        const NeverScrollableScrollPhysics(),
-                                    shrinkWrap: true,
-                                    children: const [
-                                      AvailableRoomListTile(),
-                                      AvailableRoomListTile(),
-                                      AvailableRoomListTile(),
-                                      AvailableRoomListTile(),
-                                    ],
-                                  )
                                 ],
                               ),
                             ],
                           ),
-                        ),
-                      ],
+                          const SizedBox(
+                            height: 16,
+                          ),
+                          const Text(
+                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet, sit quam proin auctor tellus, viverra. Ipsum mi tristique urna, tincidunt. Morbi mauris augue bibendum pharetra massa odio tincidunt aliquam. Morbi ut at massa lobortis vestibulum, non diam pretium.',
+                            style:
+                                TextStyle(color: Colors.black54, height: 1.4),
+                          ),
+                          const SizedBox(
+                            height: 8,
+                          ),
+                          const Divider(
+                            color: Colors.black54,
+                            thickness: 0.2,
+                          ),
+                          const SizedBox(
+                            height: 8,
+                          ),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  'Available Rooms & Rates',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 16),
+                                ),
+                                const SizedBox(
+                                  height: 16,
+                                ),
+                                const AvailableRoomListTile(),
+                                const AvailableRoomListTile(),
+                                Column(
+                                  children: const [
+                                    SizedBox(
+                                      height: 16,
+                                    ),
+                                    AvailableRoomRow(
+                                      hostelRent: '490',
+                                      numberInRoom: '5',
+                                    ),
+                                    SizedBox(
+                                      height: 16,
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           )
         ],
       ),
