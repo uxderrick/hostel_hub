@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hostel_hub/Screens/create_account.dart';
 import 'package:hostel_hub/Screens/home.dart';
 
+import 'bottom_nav_bar.dart';
+
 class Login extends StatefulWidget {
   const Login({super.key});
 
@@ -109,8 +111,10 @@ class _LoginState extends State<Login> {
                 )),
               ),
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: ((context) => const Home())));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: ((context) => const BottomNavBar())));
               }),
           const SizedBox(
             height: 16,

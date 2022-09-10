@@ -12,7 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(fontFamily: 'DM Sans'),
+      theme: ThemeData(
+          fontFamily: 'DM Sans', primaryColor: const Color(0xff1D6DB1)),
       debugShowCheckedModeBanner: false,
       home: const WelcomeScreen(),
     );

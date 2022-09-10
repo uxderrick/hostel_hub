@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hostel_hub/Screens/home.dart';
 import 'package:hostel_hub/Screens/login.dart';
+
+import 'bottom_nav_bar.dart';
 
 class CreateAccount extends StatefulWidget {
   const CreateAccount({super.key});
@@ -129,8 +130,10 @@ class _CreateAccountState extends State<CreateAccount> {
               )),
             ),
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: ((context) => const Home())));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: ((context) => const BottomNavBar())));
             },
           ),
           const SizedBox(
