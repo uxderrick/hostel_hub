@@ -22,7 +22,7 @@ class Intro3 extends StatelessWidget {
         ),
         const Text(
           'All Your Hostel Needs In One Place',
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
         )
       ]),
     );

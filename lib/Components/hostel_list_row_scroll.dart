@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hostel_hub/Components/hostel_card.dart';
+import 'package:hostel_hub/Screens/hostel_detail_screen.dart';
 
 class HostelRowScrollList extends StatelessWidget {
   final String listName;
@@ -40,21 +41,38 @@ class HostelRowScrollList extends StatelessWidget {
               const SizedBox(
                 width: 16,
               ),
-              HostelCard(
-                hostelImage: hostelImage,
-                hostelLocation: 'East Legon, Accra',
-                hostelName: 'Pinky Hostel',
-                hostelRent: '400',
+              GestureDetector(
+                child: HostelCard(
+                  hostelImage: hostelImage,
+                  hostelLocation: 'East Legon, Accra',
+                  hostelName: 'Pinky Hostel',
+                  hostelRent: '400',
+                ),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const HostelDetail(),
+                      ));
+                },
               ),
               const SizedBox(
                 width: 24,
               ),
-              HostelCard(
-                hostelImage: hostelImage,
-                hostelLocation: 'Tantra Hills, Accra',
-                hostelName: 'Camille & Marie Hostels',
-                hostelRent: '750',
-              ),
+              GestureDetector(
+                  child: HostelCard(
+                    hostelImage: hostelImage,
+                    hostelLocation: 'Tantra Hills, Accra',
+                    hostelName: 'Camille & Marie Hostels',
+                    hostelRent: '750',
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HostelDetail(),
+                        ));
+                  }),
               const SizedBox(
                 width: 16,
               )

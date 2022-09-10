@@ -47,9 +47,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const SizedBox(
-                    height: 550,
-                  ),
+                  const Spacer(),
                   SmoothPageIndicator(
                     controller: _controller,
                     count: 3,
@@ -104,6 +102,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       ),
                     ),
                   ),
+                  const SizedBox(
+                    height: 56,
+                  )
                 ],
               ),
             ),
