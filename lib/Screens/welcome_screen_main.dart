@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:hostel_hub/Screens/create_account.dart';
 import 'package:hostel_hub/Screens/intro_screen_1.dart';
 import 'package:hostel_hub/Screens/intro_screen_2.dart';
 import 'package:hostel_hub/Screens/intro_screen_3.dart';
+import 'package:hostel_hub/Screens/login.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -59,24 +61,49 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   const SizedBox(
                     height: 40,
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                        color: const Color(0xff1D6DB1),
-                        borderRadius: BorderRadius.circular(4)),
-                    height: 58,
-                    child: const Center(
-                        child: Text(
-                      'Create my new account',
-                      style: TextStyle(fontSize: 16, color: Colors.white),
-                    )),
+                  GestureDetector(
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: const Color(0xff1D6DB1),
+                          borderRadius: BorderRadius.circular(4)),
+                      height: 58,
+                      child: const Center(
+                          child: Text(
+                        'Create my new account',
+                        style: TextStyle(fontSize: 16, color: Colors.white),
+                      )),
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const CreateAccount()));
+                    },
                   ),
                   const SizedBox(
-                    height: 24,
+                    height: 16,
                   ),
-                  const Text(
-                    'I have an account already',
-                    style: TextStyle(fontSize: 16, color: Color(0xff1D6DB1)),
-                  )
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Login()));
+                    },
+                    child: Container(
+                      alignment: const Alignment(0, 0),
+                      height: 40,
+                      width: double.infinity,
+                      child: const Text(
+                        'I have an account already',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Color(0xff1D6DB1),
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),

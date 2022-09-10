@@ -17,8 +17,7 @@ class Intro3 extends StatelessWidget {
           decoration: BoxDecoration(
               image: const DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage('images/onboarding.png')),
-              color: Colors.amber,
+                  image: AssetImage('images/open_hostel.jpeg')),
               borderRadius: BorderRadius.circular(4)),
         )
       ]),

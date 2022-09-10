@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:hostel_hub/Screens/create_account.dart';
 import 'package:hostel_hub/Screens/home.dart';
+import 'package:hostel_hub/Screens/login.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class CreateAccount extends StatefulWidget {
+  const CreateAccount({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<CreateAccount> createState() => _CreateAccountState();
 }
 
-class _LoginState extends State<Login> {
+class _CreateAccountState extends State<CreateAccount> {
   bool _isObscure = true;
 
   @override
@@ -24,7 +24,7 @@ class _LoginState extends State<Login> {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           const Text(
-            'Login to your account',
+            'Create your new account',
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
           ),
           const SizedBox(
@@ -33,6 +33,25 @@ class _LoginState extends State<Login> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const Text(
+                'Full name',
+                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14),
+              ),
+              const SizedBox(height: 8),
+              SizedBox(
+                height: 56,
+                child: TextFormField(
+                  decoration: const InputDecoration(
+                    contentPadding: EdgeInsets.all(20),
+                    border: InputBorder.none,
+                    filled: true,
+                    hintText: 'eg: John Doe',
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 24,
+              ),
               const Text(
                 'Email Address',
                 style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14),
@@ -68,8 +87,9 @@ class _LoginState extends State<Login> {
                   contentPadding: const EdgeInsets.all(20),
                   suffixIcon: IconButton(
                     icon: Icon(
-                        _isObscure ? Icons.visibility : Icons.visibility_off,
-                        color: const Color(0xff6E6876)),
+                      _isObscure ? Icons.visibility : Icons.visibility_off,
+                      color: const Color(0xff6E6876),
+                    ),
                     onPressed: () {
                       setState(() {
                         _isObscure = !_isObscure;
@@ -97,21 +117,22 @@ class _LoginState extends State<Login> {
           ),
           const Spacer(),
           GestureDetector(
-              child: Container(
-                decoration: BoxDecoration(
-                    color: const Color(0xff1D6DB1),
-                    borderRadius: BorderRadius.circular(4)),
-                height: 58,
-                child: const Center(
-                    child: Text(
-                  'Log in',
-                  style: TextStyle(fontSize: 16, color: Colors.white),
-                )),
-              ),
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: ((context) => const Home())));
-              }),
+            child: Container(
+              decoration: BoxDecoration(
+                  color: const Color(0xff1D6DB1),
+                  borderRadius: BorderRadius.circular(4)),
+              height: 58,
+              child: const Center(
+                  child: Text(
+                'Create Account',
+                style: TextStyle(fontSize: 16, color: Colors.white),
+              )),
+            ),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: ((context) => const Home())));
+            },
+          ),
           const SizedBox(
             height: 16,
           ),
@@ -121,7 +142,7 @@ class _LoginState extends State<Login> {
               height: 40,
               width: double.infinity,
               child: const Text(
-                'Create my new account',
+                'I already have an account',
                 style: TextStyle(
                   fontSize: 16,
                   color: Color(0xff1D6DB1),
@@ -130,10 +151,8 @@ class _LoginState extends State<Login> {
               ),
             ),
             onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const CreateAccount()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const Login()));
             },
           ),
           const SizedBox(
