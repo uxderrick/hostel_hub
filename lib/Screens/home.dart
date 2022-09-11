@@ -99,7 +99,6 @@ class _HomeState extends State<Home> {
                     height: 12,
                   ),
                   SizedBox(
-                    height: 180,
                     child: GridView(
                         physics: const NeverScrollableScrollPhysics(),
                         shrinkWrap: true,

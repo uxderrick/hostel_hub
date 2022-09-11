@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hostel_hub/Screens/checkout.dart';
 
 class AvailableRoomRow extends StatelessWidget {
   final String numberInRoom;
@@ -27,17 +28,23 @@ class AvailableRoomRow extends StatelessWidget {
             )
           ],
         ),
-        Container(
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-                color: const Color(0xffDBEEFF),
-                borderRadius: BorderRadius.circular(4)),
-            height: 40,
-            width: 120,
-            child: const Text(
-              'Book This Room',
-              style: TextStyle(fontSize: 12, color: Color(0xff1D6DB1)),
-            ))
+        GestureDetector(
+          child: Container(
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                  color: const Color(0xffDBEEFF),
+                  borderRadius: BorderRadius.circular(4)),
+              height: 40,
+              width: 120,
+              child: const Text(
+                'Book This Room',
+                style: TextStyle(fontSize: 12, color: Color(0xff1D6DB1)),
+              )),
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const Checkout()));
+          },
+        )
       ],
     );
   }
@@ -46,6 +53,8 @@ class AvailableRoomRow extends StatelessWidget {
 class AvailableRoomListTile extends StatelessWidget {
   const AvailableRoomListTile({
     Key? key,
+    required String hostelRent,
+    required String numberInRoom,
   }) : super(key: key);
 
   @override

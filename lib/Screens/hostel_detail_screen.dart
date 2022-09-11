@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hostel_hub/Screens/choose_room.dart';
 import 'package:hostel_hub/Screens/hostel_detail_1.dart';
 import 'package:hostel_hub/Screens/hostel_detail_2.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -192,8 +193,14 @@ class _HostelDetailState extends State<HostelDetail> {
                                 const SizedBox(
                                   height: 16,
                                 ),
-                                const AvailableRoomListTile(),
-                                const AvailableRoomListTile(),
+                                const AvailableRoomListTile(
+                                  hostelRent: '300',
+                                  numberInRoom: '',
+                                ),
+                                const AvailableRoomListTile(
+                                  hostelRent: '',
+                                  numberInRoom: '',
+                                ),
                                 Column(
                                   children: const [
                                     SizedBox(
@@ -220,6 +227,26 @@ class _HostelDetailState extends State<HostelDetail> {
             ),
           )
         ],
+      ),
+      floatingActionButton: Container(
+        alignment: Alignment.bottomCenter,
+        child: GestureDetector(
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: ((context) => const ChooseRoom())));
+          },
+          child: Container(
+              alignment: Alignment.center,
+              height: 56,
+              width: 144,
+              decoration: BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.circular(9000)),
+              child: const Text(
+                'See more rooms',
+                style: TextStyle(color: Colors.white),
+              )),
+        ),
       ),
     );
   }
