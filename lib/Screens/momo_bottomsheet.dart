@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hostel_hub/Screens/processing_1.dart';
 
 class MomoBottomSheet extends StatefulWidget {
   const MomoBottomSheet({super.key});
@@ -139,19 +140,27 @@ class _MomoBottomSheetState extends State<MomoBottomSheet> {
             const SizedBox(
               height: 24,
             ),
-            Container(
-              decoration: BoxDecoration(
-                  color: const Color(0xff1D6DB1),
-                  borderRadius: BorderRadius.circular(4)),
-              height: 56,
-              child: const Center(
-                  child: Text(
-                'Pay GHS 400',
-                style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500),
-              )),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Processing1()));
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                    color: const Color(0xff1D6DB1),
+                    borderRadius: BorderRadius.circular(4)),
+                height: 56,
+                child: const Center(
+                    child: Text(
+                  'Pay GHS 400',
+                  style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500),
+                )),
+              ),
             ),
             const SizedBox(
               height: 16,

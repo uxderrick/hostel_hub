@@ -19,7 +19,6 @@ class _HostelDetailState extends State<HostelDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         leading: Row(

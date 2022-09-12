@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hostel_hub/Screens/create_account.dart';
-import 'package:hostel_hub/Screens/home.dart';
 
 import 'bottom_nav_bar.dart';
 
