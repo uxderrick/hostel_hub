@@ -119,7 +119,7 @@ class _CheckoutState extends State<Checkout> {
                         builder: (context) => const MomoBottomSheet(),
                       ),
                       child: Container(
-                        color: Colors.white,
+                        color: Colors.transparent,
                         height: 32,
                         child: Row(
                           children: [
@@ -164,7 +164,7 @@ class _CheckoutState extends State<Checkout> {
                       ),
                       child: Container(
                         height: 24,
-                        color: Colors.white,
+                        color: Colors.transparent,
                         child: Row(
                           children: [
                             const Text('Bank Card'),
