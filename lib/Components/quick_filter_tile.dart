@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hostel_hub/Screens/choose_room.dart';
 
 class QuickFilterTile extends StatelessWidget {
   final Color tileColor;
@@ -13,28 +14,34 @@ class QuickFilterTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-          color: tileColor, borderRadius: BorderRadius.circular(4)),
-      child: Row(
-        children: [
-          Icon(
-            Icons.person,
-            color: textColor,
-            size: 20,
-          ),
-          const SizedBox(
-            width: 4,
-          ),
-          Text(
-            '$numberInRoom in a room',
-            style: TextStyle(
-                fontWeight: FontWeight.w400, fontSize: 16, color: textColor),
-          ),
-          const Spacer(),
-          Icon(Icons.chevron_right, color: textColor)
-        ],
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const ChooseRoom()));
+      },
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+            color: tileColor, borderRadius: BorderRadius.circular(4)),
+        child: Row(
+          children: [
+            Icon(
+              Icons.person,
+              color: textColor,
+              size: 20,
+            ),
+            const SizedBox(
+              width: 4,
+            ),
+            Text(
+              '$numberInRoom in a room',
+              style: TextStyle(
+                  fontWeight: FontWeight.w400, fontSize: 16, color: textColor),
+            ),
+            const Spacer(),
+            Icon(Icons.chevron_right, color: textColor)
+          ],
+        ),
       ),
     );
   }
